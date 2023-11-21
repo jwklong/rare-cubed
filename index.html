@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>rare-cubed</title>
+  </head>
+  <body>
+    <div id="main">
+      <div id="logo">rare<sup>cubed</sup></div>
+      <span id="money">$0</span>
+      <span id="alpha">0α</span>
+      <div id="cube">
+        <div class="side top"></div>
+        <div class="side front"></div>
+        <div class="side left"></div>
+      </div>
+      <div id="stats">
+        <span id="cubename">Normal Cube</span>
+        <span id="cuberarity">1 / 1</span>
+        <div id="reroll" onclick="reroll()">Reroll</div>
+      </div>
+    </div>
+    <div id="sidebar">
+      <div id="opensidebar" onclick="document.body.classList.toggle('sideon')">+</div>
+      <div id="rarelog"></div>
+      <div id="buymutations"></div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>

@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    background: #306;
+    font-family: "Space Mono", "Roboto Mono", monospace;
+    font-size: 2vh;
+    color: #fff;
+    overflow: hidden;
+}
+
+#main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: width .7s;
+}
+.sideon #main { width: 70%; }
+
+#logo {
+    text-align: center;
+    margin-top: 1vh;
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+sup {
+    font-size: .7em;
+}
+
+#money {
+    font-size: 4vh;
+    color: #49d360;
+    position: absolute;
+    top: 0;
+    left: 4px;
+}
+
+#alpha {
+    font-size: 4vh;
+    font-weight: 700;
+    color: #0091ff;
+    position: absolute;
+    top: 0;
+    right: calc(3vh + 4px);
+}
+
+#stats {
+    position: absolute;
+    width: 100%;
+    bottom: 10vh;
+    text-align: center;
+}
+#stats > span { display: block; }
+#cubename { font-size: 4vh; font-weight: bold; }
+
+#reroll, .buy {
+    display: inline-block;
+    font-weight: bold;
+    padding: 0px 8px;
+    background-color: #84d;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+}
+#reroll {
+    margin-top: 8px;
+    font-size: 3vh;
+}
+
+#sidebar {
+    z-index: 999;
+    height: calc(100% - 2vh);
+    width: 30%;
+    box-sizing: border-box;
+    border: 8px solid #b7f;
+    background: #306;
+    border-top-left-radius: 3vh;
+    border-bottom-left-radius: 3vh;
+    border-right: none;
+    position: absolute;
+    right: -30%;
+    transition: right .7s;
+    padding: 1vh;
+}
+.sideon #sidebar { right: 0; }
+
+#opensidebar {
+    position: absolute;
+    font-size: 5vh;
+    color: #306;
+    height: calc(100% - 16px - 4vh);
+    background: #b7f;
+    border-top-left-radius: 2vh;
+    border-bottom-left-radius: 2vh;
+    padding: 0.5vh;
+    user-select: none;
+    top: 2vh;
+    cursor: pointer;
+    left: -4vh;
+}
+
+#rarelog {
+    position: absolute;
+    top: 1vh;
+    height: 30%;
+    width: calc(100% - 2vh);
+}
+
+#rarelog > div {
+    display: flex;
+    width: 100%;
+    margin-bottom: 8px;
+    height: calc(33.3% - 8px);
+    background: #b7f;
+    border-radius: 1vh;
+    justify-content: center;
+    align-items: center;
+    color: #306;
+    font-weight: 700;
+    text-align: center;
+}
+
+#buymutations {
+    position: absolute;
+    top: calc(30% + 1vh);
+    height: 30%;
+    overflow-y: auto;
+    width: calc(100% - 1vh);
+}
+  
+#cube {
+    width: 20vh;
+    height: 20vh;
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 10vh);
+    transform-style: preserve-3d;
+    transform: rotateX(235deg) rotateZ(-135deg);
+    --color: #eee;
+}
+
+.side {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: var(--color);
+}
+
+.top {
+    transform: translateZ(-20vh) rotateY(180deg);
+    filter: brightness(0.9);
+}
+
+.front {
+    transform: rotateX(90deg) rotateY(180deg) translateZ(10vh) translateY(-10vh);
+}
+
+.left {
+    width: 20vh;
+    transform: rotateY(180deg) rotateX(-90deg) rotateY(-90deg) translateZ(10vh) translateY(-10vh);
+    filter: brightness(0.75);
+}
+
+.ring {
+    width: 125%;
+    height: 125%;
+    position: relative;
+    top: -12.5%;
+    left: -12.5%;
+    outline: 4vh var(--color) solid;
+    filter: brightness(0.85) saturate(0.5);
+    transform: translateZ(-10vh);
+}
+
+.mcside {
+    width: 100%;
+    height: 85%;
+    position: absolute;
+    bottom: 0;
+    background: #cb966e;
+}
+
+.outlined .side {
+    box-sizing: border-box;
+    border: 1vh solid #000
+}
