@@ -47,10 +47,10 @@ const mutations = [
         cube.querySelector('.left').style.setProperty("-webkit-mask-image", "linear-gradient(#ffff, #fff0)")
         return cube
     }, 10000],
-    ['Outlined', 1, (cube) => {
+    ['Outlined', 50, (cube) => {
         cube.classList.add("outlined")
         return cube
-    }, 1],
+    }, 25000],
     ['Minecraft', 64, (cube) => {
         if (cube.style.getPropertyValue("--color") == "") cube.style.setProperty("--color", "#bbffc4")
         var mcside = document.createElement('div')
@@ -59,6 +59,13 @@ const mutations = [
         cube.querySelector('.left').appendChild(mcside)
         return cube
     }, 4000],
+    ['Billy', 200, (cube) => {
+        var billy = document.createElement('span')
+        billy.classList.add('billy')
+        billy.innerText = '¦)'
+        cube.querySelector('.front').appendChild(billy)
+        return cube
+    }, 100000],
 ]
 
 for (let mutation of mutations.sort((a, b) => a[3] - b[3])) {
@@ -134,7 +141,7 @@ function reroll() {
     document.getElementById('money').innerText = "$" + notation(money)
 
     //just sold my car to we buy any car
-    if (rarity > 1000) {
+    if (rarity >= 1000) {
         if (rarelog.children.length >= 3) rarelog.children[2].remove()
 
         let logel = document.createElement('div')
