@@ -136,6 +136,7 @@ function reroll() {
     document.getElementById('cube').remove()
     document.getElementById('main').appendChild(cube)
     document.getElementById('cubename').innerText = text
+    document.getElementById('cubename').className = ""
     document.getElementById('cuberarity').innerText = "1 / " + notation(rarity)
     money += rarity
     document.getElementById('money').innerText = "$" + notation(money)
@@ -147,5 +148,11 @@ function reroll() {
         let logel = document.createElement('div')
         logel.innerHTML = `${text}<br>1 / ${notation(rarity)}`
         rarelog.insertBefore(logel, rarelog.firstChild)
+
+        document.getElementById('cubename').classList.add('rare')
     }
+
+    setInterval(() => {
+        cube.style.top = "50%"
+    }, 0);
 }

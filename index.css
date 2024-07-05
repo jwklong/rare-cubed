@@ -25,8 +25,9 @@
     font-weight: bold;
 }
 
-sup {
+#logo > sup {
     font-size: .7em;
+    color: #b7f;
 }
 
 #money {
@@ -53,7 +54,13 @@ sup {
     text-align: center;
 }
 #stats > span { display: block; }
-#cubename { font-size: 4vh; font-weight: bold; }
+
+#cubename {
+    font-size: 4vh;
+    font-weight: bold;
+    transition: color 0.5s;
+}
+#cubename.rare { color: #b7f; }
 
 #reroll, .buy {
     display: inline-block;
@@ -129,16 +136,31 @@ sup {
     overflow-y: auto;
     width: calc(100% - 1vh);
 }
+
+@keyframes float {
+    0% {
+        top: 50%;
+    }
+    50% {
+        top: 45%;
+    }
+    100% {
+        top: 50%;
+    }
+}
   
 #cube {
     width: 20vh;
     height: 20vh;
     position: absolute;
-    top: 50%;
+    top: 120%;
     left: calc(50% - 10vh);
     transform-style: preserve-3d;
     transform: rotateX(235deg) rotateZ(-135deg);
     --color: #eee;
+    transition: top 0.5s;
+    animation: float 4s 0.5s infinite ease-in-out;
+    z-index: -1;
 }
 
 .side {
